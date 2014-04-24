@@ -16,18 +16,23 @@
                                       {'name': 'Lennister', 'crest' : 'img/got/lennister.jpg'},
                                       {'name': 'Tyrell',    'crest' : 'img/got/tyrell.jpg'},
                                       {'name': 'Martell',   'crest' : 'img/got/martell.jpg'}]"
-                   class="table">
-
+                   class="table table-striped">
+                <th colspan="{{ families.length }}">
+                  <h2>Houses of Westeros<h2>
+                </th>
                 <tr>
                     <td ng-repeat="family in families">
-                        <h2>{{ family.name }}</h2>
+                        <h4>{{ family.name }}</h4>
                         <img ng-src="{{ family.crest }}" class="img-rounded">
                     </td>
                 </tr>
 
             </table>
 
-
+            <blockquote>
+              <p>ng-init lets you create sample data</p>
+              <footer>Do not forget to have a look at ng-repeat.</footer>
+            </blockquote>
 
         </div>
     </div>
