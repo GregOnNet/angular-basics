@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
 
-            <h1>ng-prototyping</h1>
+            <h1>ng-build-in</h1>
 
             <table ng-init="families=[{'name': 'Stark',     'crest' : 'img/got/stark.jpg'},
                                       {'name': 'Lennister', 'crest' : 'img/got/lennister.jpg'},
@@ -21,7 +21,13 @@
                   <h2>Houses of Westeros<h2>
                 </th>
                 <tr>
-                    <td ng-repeat="family in families">
+                   <td colspan="{{ families.length }}">
+                       <input ng-model="query" class="form-control"
+                     placeholder="Filter houses by name...">
+                   </td>
+                 </tr> 
+                <tr>
+                    <td ng-repeat="family in families | filter: query">
                         <h4>{{ family.name }}</h4>
                         <img ng-src="{{ family.crest }}" class="img-rounded">
                     </td>
@@ -30,8 +36,8 @@
             </table>
 
             <blockquote>
-              <p>ng-init lets you create sample data</p>
-              <footer>Do not forget to have a look at ng-repeat.</footer>
+              <p><abbr title="ng-model">ng-model</abbr> lets you define a two-way-binded field</p>
+              <footer>build-in filters like <abbr title="filter">filter</abbr> or <abbr title="sort">sort</abbr> helps you to manage data without a line of javascript.</footer>
             </blockquote>
 
         </div>
