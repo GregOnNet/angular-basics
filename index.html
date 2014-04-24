@@ -11,21 +11,20 @@
     <div class="container">
         <div class="row">
 
-            <h1>custom filters</h1>
+            <h1>factories, services & providers are the same things!</h1>
 
             <table ng-controller="westerosCtrl" class="table table-striped">
                 <th colspan="{{ families.length }}">
-                  <h2>Houses of Westeros<h2>
+                    <h2>Houses of Westeros
+                        <h2>
                 </th>
                 <tr>
-                   <td colspan="{{ families.length }}">
-                       <input ng-model="query" class="form-control"
-                     placeholder="Filter houses by name...">
-                   </td>
-                 </tr> 
+                    <td colspan="{{ families.length }}">
+                        <input ng-model="query" class="form-control" placeholder="Filter houses by name...">
+                    </td>
+                </tr>
                 <tr>
-                    <td ng-repeat="family in families | filter: query"
-                        class="repeat-animation">
+                    <td ng-repeat="family in families | filter: query" class="repeat-animation">
                         <h4>{{ family.name | pluralize }}</h4>
                         <img ng-src="{{ family.crest }}" class="img-rounded">
                     </td>
@@ -34,8 +33,10 @@
             </table>
 
             <blockquote>
-              <p>Filters are really handy to manipulate or format data for the view.</p>
-              <footer>Unfortunatelly the syntax for me is quiet ugly!</footer>
+                <p>
+                    <abbr title="factories">factories & co.</abbr>are useful to seperate concerns in your app and to build reusable javascript code.</p>
+                <footer>The heading is just kidding. <a href="http://codeofrob.com/entries/you-have-ruined-javascript.html" target="_blank">Read why!</a>
+                </footer>
             </blockquote>
 
         </div>
@@ -46,6 +47,7 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/westerosCtrl.js"></script>
     <script type="text/javascript" src="js/pluralizeFilter.js"></script>
+    <script type="text/javascript" src="js/westerosFactory.js"></script>
 
 </body>
 
