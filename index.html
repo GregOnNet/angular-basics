@@ -10,12 +10,24 @@
     <div class="container">
         <div class="row">
 
-            <h1>ng-expressions</h1>
+            <h1>ng-prototyping</h1>
 
-            <blockquote>
-                <p>3 + 4 = {{ 3 + 4 }}</p>
-                <footer ng-non-bindable>Using {{ curly brackets }}! Angular cares about it.</footer>
-            </blockquote>
+            <table ng-init="families=[{'name': 'Stark',     'crest' : 'img/got/stark.jpg'},
+                                      {'name': 'Lennister', 'crest' : 'img/got/lennister.jpg'},
+                                      {'name': 'Tyrell',    'crest' : 'img/got/tyrell.jpg'},
+                                      {'name': 'Martell',   'crest' : 'img/got/martell.jpg'}]"
+                   class="table">
+
+                <tr>
+                    <td ng-repeat="family in families">
+                        <h2>{{ family.name }}</h2>
+                        <img ng-src="{{ family.crest }}" class="img-rounded">
+                    </td>
+                </tr>
+
+            </table>
+
+
 
         </div>
     </div>
