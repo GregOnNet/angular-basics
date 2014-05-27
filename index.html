@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
 
-            <h1>directives</h1>
+            <h1>binding completed</h1>
 
             <table ng-controller="westerosCtrl" class="table table-striped">
                 <th colspan="{{ families.length }}">
@@ -24,7 +24,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td ng-repeat="family in families | filter: query" class="repeat-animation">
+                    <td ng-repeat="family in families | filter: query" class="repeat-animation" fire-binding-finished>
                         <span westeros-family="family"></span>
                     </td>
                 </tr>
@@ -32,14 +32,20 @@
             </table>
 
             <blockquote>
-                <p><abbr title="directives">directives</abbr> help to clean up the html-markup.</p>
-                <footer>They allow to react to data-binding and run further code.</footer>
-                <footer>Have a deeper look on <a href="http://stackoverflow.com/questions/15676614/directive-link-vs-compile-vs-controller" target="_blank">link & compile</a>!</footer>
+                <p><abbr title="$emit & $on">events</abbr> can be used to determine whether the binding is completed. </p>
+                <p>In this sample a directive called <code>fire-binding-finished</code> was added to inform the <code>westerosCtrl</code> when the ng-repeat directive is done.</p>
+                <p>After the data-binding is completed jqueryUI takes part in: You now can drag the pictures around!</p>
+                <footer>It is useful to integrate own javascript-plugins which apply on the bound content.</footer>
+                <footer>Have a deeper look on <a href="http://www.nodewiz.biz/angular-js-final-callback-after-ng-repeat/">final-callback-after-ng-repeat</a>!</footer>
             </blockquote>
 
         </div>
     </div>
+    
 
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/vendors/angular.min.js"></script>
     <script type="text/javascript" src="js/vendors/angular-animate.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
@@ -47,6 +53,7 @@
     <script type="text/javascript" src="js/pluralizeFilter.js"></script>
     <script type="text/javascript" src="js/westerosFactory.js"></script>
     <script type="text/javascript" src="js/directives/westerosfamily.js"></script>
+    <script type="text/javascript" src="js/directives/fireBindingFinished.js"></script>
 
 </body>
 
