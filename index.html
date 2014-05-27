@@ -24,7 +24,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td ng-repeat="family in families | filter: query" class="repeat-animation">
+                    <td ng-repeat="family in families | filter: query" class="repeat-animation" fire-binding-finished>
                         <span westeros-family="family"></span>
                     </td>
                 </tr>
@@ -47,6 +47,7 @@
     <script type="text/javascript" src="js/pluralizeFilter.js"></script>
     <script type="text/javascript" src="js/westerosFactory.js"></script>
     <script type="text/javascript" src="js/directives/westerosfamily.js"></script>
+    <script type="text/javascript" src="js/directives/fireBindingFinished.js"></script>
 
 </body>
 
